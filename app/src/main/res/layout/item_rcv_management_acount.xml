@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/green"
+        android:id="@+id/ll_rcv_qltaikhoan">
+
+        <TextView
+            android:id="@+id/tv_idqltaikhoan"
+            android:layout_width="20dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="180dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Email"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/tv_trangthaiqltaikhoan"
+            android:layout_width="90dp"
+            android:gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="Trạng thái"
+            android:textSize="16dp"
+            android:layout_gravity="center_vertical"/>
+        <Button
+            android:id="@+id/btn_block_account"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="10dp"
+            android:gravity="center"
+            android:text="Ẩn"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"/>
+        <Button
+            android:id="@+id/btn_unblock_account"
+            android:layout_width="50dp"
+            android:textStyle="normal"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="10dp"
+            android:gravity="center"
+            android:text="Hiện"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

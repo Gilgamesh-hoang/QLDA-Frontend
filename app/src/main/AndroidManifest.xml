@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.truyenapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="Argon Comic"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.AppDocTruyen">
+        <activity
+            android:name="com.example.truyenapp.view.activity.CategoryActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.VerifyAccountActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.ForgotPassword"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.NewPassword"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.Signin"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.DetailComicActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.SearchActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.RankActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.ReadChapterActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.RedeemRewardActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.StoreActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.RatingsHistory"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.AccountCommentActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.admin.ManagementAccount"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.admin.CommentManagementActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.admin.StatisticalManagement"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.admin.BookManagement"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.admin.ShowInformationOfAccount"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.admin.CommentDetailManagementActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.admin.StatisticalInformation"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.admin.BookDetailManagement"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.admin.ShowChapterInfo"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.ChangePasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.AccountInfoActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.RedeemRewardHistoryActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.truyenapp.view.activity.IntroduceActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

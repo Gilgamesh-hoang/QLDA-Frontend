@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quản lý thống kê"
+        android:textSize="26dp"
+        android:textColor="@color/white"
+        android:background="@color/green"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/tv_qltk_sltruyen"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tổng số truyện: 20"/>
+    <TextView
+        android:id="@+id/tv_qltk_slchapter"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tổng số chapter: 60"/>
+    <TextView
+        android:id="@+id/tv_qltk_slview"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tổng lượt xem: 1000"/>
+    <TextView
+        android:id="@+id/tv_qltk_slvote"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tổng đánh giá: 10"/>
+    <TextView
+        android:id="@+id/tv_qltk_slcomment"
+        android:textSize="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tổng bình luận: 10"/>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="20dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="350dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Danh sách truyện"
+            android:textSize="16dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/rcv_quanlythongke"/>
+        </ScrollView>
+    </LinearLayout>
+
+
+</LinearLayout>

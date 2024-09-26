@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "613612803978",
+    "project_id": "comic-c7562",
+    "storage_bucket": "comic-c7562.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613612803978:android:da76c336dba6ffb3039a73",
+        "android_client_info": {
+          "package_name": "com.example.truyenapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-tbMB140qZDPVKbiBheIlLOBaCrtRyLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

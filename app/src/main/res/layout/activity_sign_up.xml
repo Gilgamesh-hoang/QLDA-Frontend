@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".view.activity.SignUpActivity">
+
+    <ImageView
+        android:id="@+id/logoImg"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Đăng Ký"
+        android:textColor="@color/green"
+        android:textSize="32dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/usernameField"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:textColor="@color/black"
+        android:textStyle="normal"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="text"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        android:hint="Tên đăng nhập"
+        android:textSize="14dp"
+        android:drawableLeft="@drawable/account"
+        android:drawableTint="@color/green"
+        android:drawablePadding="20dp"
+        android:padding="10dp"
+        android:background="@drawable/khung"/>
+
+    <TextView
+        android:id="@+id/warning_sign_up_email"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/passwordField"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/khung"
+        android:drawableLeft="@drawable/ic_key"
+        android:drawablePadding="20dp"
+        android:drawableTint="@color/green"
+        android:ems="10"
+        android:hint="Mật khẩu (*)"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/warning_sign_up_password"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/passwordConfirmField"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/khung"
+        android:drawableLeft="@drawable/ic_key"
+        android:drawablePadding="20dp"
+        android:drawableTint="@color/green"
+        android:ems="10"
+        android:hint="Nhập lại mật khẩu (*)"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/warning_sign_up_re_password"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/emailField"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/khung"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="20dp"
+        android:drawableTint="@color/green"
+        android:ems="10"
+        android:hint="Email (*)"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/warning_sign_up_email"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible" />
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
+        android:text="Đăng Ký"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="14dp" />
+</LinearLayout>

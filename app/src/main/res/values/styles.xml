@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LoginTextField">
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:background">@drawable/khung</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="customFrameBackground">
+        <item name="android:drawablePadding">20dp</item>
+        <item name="android:background">@drawable/frame_no_corner</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+</resources>
