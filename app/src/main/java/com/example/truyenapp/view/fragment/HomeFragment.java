@@ -23,17 +23,27 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.truyenapp.R;
 import com.example.truyenapp.api.RetrofitClient;
+import com.example.truyenapp.api.SearchAPI;
 import com.example.truyenapp.api.UserAPI;
+import com.example.truyenapp.mapper.BookMapper;
+import com.example.truyenapp.model.Comic;
 import com.example.truyenapp.model.JWTToken;
+import com.example.truyenapp.response.APIResponse;
+import com.example.truyenapp.response.BookResponse;
+import com.example.truyenapp.response.DataListResponse;
 import com.example.truyenapp.response.UserResponse;
 import com.example.truyenapp.utils.AuthenticationManager;
 import com.example.truyenapp.utils.DialogHelper;
 import com.example.truyenapp.utils.SharedPreferencesHelper;
 import com.example.truyenapp.utils.SystemConstant;
+import com.example.truyenapp.view.activity.CategoryActivity;
 import com.example.truyenapp.view.activity.SignInActivity;
+import com.example.truyenapp.view.adapter.ComicSliderAdapter;
 import com.google.android.material.navigation.NavigationView;
 import com.squareup.picasso.Picasso;
 
@@ -60,11 +70,11 @@ public class HomeFragment extends Fragment implements NavigationView.OnNavigatio
     String username, email;
     private UserResponse userResponse;
 
-//    private List<Comic> newComic = new ArrayList<>();
-//    private List<Comic> topComic = new ArrayList<>();
-//    private List<Comic> comicFullChapter = new ArrayList<>();
-//    private RecyclerView rv, rv2, rv3;
-//    private ComicSliderAdapter _rv, rv_2, rv_3;
+    private List<Comic> newComic = new ArrayList<>();
+    private List<Comic> topComic = new ArrayList<>();
+    private List<Comic> comicFullChapter = new ArrayList<>();
+    private RecyclerView rv, rv2, rv3;
+    private ComicSliderAdapter _rv, rv_2, rv_3;
     private UserAPI userAPI;
 
     private DialogHelper dialogHelper;
@@ -141,24 +151,24 @@ public class HomeFragment extends Fragment implements NavigationView.OnNavigatio
         email = i.getStringExtra("email");
         tv_usernamehome.setText(email);
 
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
-//        LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
-//        LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
+        LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
+        LinearLayoutManager linearLayoutManager3 = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
 
-//        rv.setLayoutManager(linearLayoutManager);
-//        rv2.setLayoutManager(linearLayoutManager2);
-//        rv3.setLayoutManager(linearLayoutManager3);
+        rv.setLayoutManager(linearLayoutManager);
+        rv2.setLayoutManager(linearLayoutManager2);
+        rv3.setLayoutManager(linearLayoutManager3);
 
-//        _rv = new ComicSliderAdapter(getActivity(), email);
-//        rv_2 = new ComicSliderAdapter(getActivity(), email);
-//        rv_3 = new ComicSliderAdapter(getActivity(), email);
-//
-//        rv.setAdapter(_rv);
-//        rv2.setAdapter(rv_2);
-//        rv3.setAdapter(rv_3);
+        _rv = new ComicSliderAdapter(getActivity(), email);
+        rv_2 = new ComicSliderAdapter(getActivity(), email);
+        rv_3 = new ComicSliderAdapter(getActivity(), email);
 
-//        getNewComic();
-//        getTopComic();
+        rv.setAdapter(_rv);
+        rv2.setAdapter(rv_2);
+        rv3.setAdapter(rv_3);
+
+        getNewComic();
+        getTopComic();
 //        getFullComic();
 
         setEventActionBar();
@@ -186,12 +196,12 @@ public class HomeFragment extends Fragment implements NavigationView.OnNavigatio
 
         tv_TimKemHome = (TextView) view.findViewById(R.id.tv_TimKiemHome);
         tv_xephang = (TextView) view.findViewById(R.id.tv_xephang);
-        tv_theloai = (TextView) view.findViewById(R.id.tv_theloai);
+        tv_theloai = (TextView) view.findViewById(R.id.tv_category);
         tv_diemthuong = view.findViewById(R.id.btn_to_redeem_reward);
         tv_diemdanh = view.findViewById(R.id.btn_attendance_home_fragment);
-//        rv = view.findViewById(R.id.rv);
-//        rv2 = view.findViewById(R.id.rv2);
-//        rv3 = view.findViewById(R.id.rv3);
+        rv = view.findViewById(R.id.rv);
+        rv2 = view.findViewById(R.id.rv2);
+        rv3 = view.findViewById(R.id.rv3);
         menu = navigationView.getMenu();
 //        mn_it_chucnangquantri = menu.findItem(R.id.it_chucnangquantri);
         tv_usernamehome = headerLayout.findViewById(R.id.tv_usernamehome);
@@ -222,33 +232,11 @@ public class HomeFragment extends Fragment implements NavigationView.OnNavigatio
 //                Intent dialog_box1 = new Intent(getActivity(), SearchActivity.class);
 //                startActivity(dialog_box1);
 //                break;
-//            case R.id.tv_xephang:
-//                Intent dialog_box2 = new Intent(getActivity(), RankActivity.class);
-//                startActivity(dialog_box2);
-//                break;
-//            case R.id.tv_theloai:
-//                Intent dialog_box3 = new Intent(getActivity(), CategoryActivity.class);
-//                startActivity(dialog_box3);
-//                break;
-//            case R.id.btn_to_redeem_reward:
-//                if (isLoggedIn) {
-//                    Intent dialog_box4 = new Intent(getActivity(), RedeemRewardActivity.class);
-//                    startActivity(dialog_box4);
-//                } else {
-//                    dialogHelper.showDialogLogin().show();
-//                }
-//                break;
-//            case R.id.btn_attendance_home_fragment: {
-//                if (isLoggedIn) {
-////                    attendanceAPI();
-//                } else {
-//                    if (this.getActivity() instanceof HomeActivity) {
-//                        DialogHelper dialogHelper = new DialogHelper(this.getContext());
-//                        dialogHelper.showDialogLogin().show();
-//                    }
-//                }
-//                break;
-//            }
+
+            case R.id.tv_category:
+                Intent dialog_box3 = new Intent(getActivity(), CategoryActivity.class);
+                startActivity(dialog_box3);
+                break;
         }
     }
 
@@ -324,5 +312,82 @@ public class HomeFragment extends Fragment implements NavigationView.OnNavigatio
         }
         return true;
     }
+
+    public void getNewComic() {
+        SearchAPI response = RetrofitClient.getInstance(getContext()).create(SearchAPI.class);
+        response.getNewComic(5).enqueue(new Callback<APIResponse<DataListResponse<BookResponse>>>() {
+            @Override
+            public void onResponse(Call<APIResponse<DataListResponse<BookResponse>>> call, Response<APIResponse<DataListResponse<BookResponse>>> response) {
+                APIResponse<DataListResponse<BookResponse>> data = response.body();
+                assert data != null;
+                if (data.getCode() == 400 ) {
+                    return;
+                }
+                for (BookResponse bookResponse : data.getResult().getData()) {
+                    Comic comic = BookMapper.INSTANCE.bookResponseToStory(bookResponse);
+                    newComic.add(comic);
+                }
+                _rv.setData(newComic);
+            }
+
+            @Override
+            public void onFailure(Call<APIResponse<DataListResponse<BookResponse>>> call, Throwable throwable) {
+                Log.e("TAG", "Can not get new comic: " + throwable.getMessage());
+//                dialogHelper.showDialog("Lỗi, vui lòng thử lại").show();
+            }
+        });
+    }
+
+    public void getTopComic() {
+        SearchAPI response = RetrofitClient.getInstance(getContext()).create(SearchAPI.class);
+        response.getTopComic("rating", 5).enqueue(new Callback<APIResponse<DataListResponse<BookResponse>>>() {
+            @Override
+            public void onResponse(Call<APIResponse<DataListResponse<BookResponse>>> call, Response<APIResponse<DataListResponse<BookResponse>>> response) {
+                APIResponse<DataListResponse<BookResponse>> data = response.body();
+                assert data != null;
+                if(data.getCode() == 400){
+                    return;
+                }
+                for (BookResponse bookResponse : data.getResult().getData()) {
+                    Comic comic = BookMapper.INSTANCE.bookResponseToStory(bookResponse);
+                    topComic.add(comic);
+                }
+                rv_2.setData(topComic);
+            }
+
+            @Override
+            public void onFailure(Call<APIResponse<DataListResponse<BookResponse>>> call, Throwable throwable) {
+                Log.e("TAG", "Can not get top comic: " + throwable.getMessage());
+//                dialogHelper.showDialog("Lỗi, vui lòng thử lại").show();
+            }
+        });
+    }
+
+//    public void getFullComic() {
+//        SearchAPI response = RetrofitClient.getInstance(getContext()).create(SearchAPI.class);
+//        response.getFullComic("", "desc", 5).enqueue(new Callback<APIResponse<DataListResponse<BookResponse>>>() {
+//            @Override
+//            public void onResponse(Call<APIResponse<DataListResponse<BookResponse>>> call, Response<APIResponse<DataListResponse<BookResponse>>> response) {
+//
+//                Log.d("API", response.toString());
+//                APIResponse<DataListResponse<BookResponse>> data = response.body();
+//                assert data != null;
+//                if (data.getCode() == 400) {
+//                    return;
+//                }
+//                for (BookResponse bookResponse : data.getResult().getData()) {
+//                    Comic classifyComic = BookMapper.INSTANCE.bookResponseToStory(bookResponse);
+//                    comicFullChapter.add(classifyComic);
+//                }
+//                rv_3.setData(comicFullChapter);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<APIResponse<DataListResponse<BookResponse>>> call, Throwable throwable) {
+//                Log.e("TAG", "Can not get comic full: " + throwable.getMessage());
+////                dialogHelper.showDialog("Lỗi, vui lòng thử lại").show();
+//            }
+//        });
+//    }
 
 }
