@@ -20,6 +20,9 @@ android {
                 arguments = ["mapstruct.defaultComponentModel": "android"]
             }
         }
+
+        buildConfigField "String", "SERVER_HOST", "\"${project.properties['android.server.host']}\""
+        buildConfigField "String", "SERVER_PORT", "\"${project.properties['android.server.port']}\""
     }
 
     buildTypes {
