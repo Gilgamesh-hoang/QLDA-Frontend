@@ -11,7 +11,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public interface    SearchAPI {
+public interface SearchAPI {
     @GET("v1/books/rank")
     Call<APIResponse<DataListResponse<BookResponse>>> rank(@Query("type") String type);
 
@@ -29,9 +29,11 @@ public interface    SearchAPI {
 
     @GET("v1/books/search")
     Call<APIResponse<DataListResponse<BookResponse>>> search(@Query("keyword") String keyword, @Query("categoryId") Integer category);
+
     @GET("v1/books/search")
     Call<APIResponse<DataListResponse<BookResponse>>> search(@Query("keyword") String keyword, @Query("categoryId") Integer category, @Query("page") Integer page, @Query("size") Integer pageSize);
-    @GET("v1/books/category")
+
+    @GET("v1/categories")
     Call<APIResponse<List<CategoryResponse>>> getCategory();
 
     @GET("v1/books/search")
