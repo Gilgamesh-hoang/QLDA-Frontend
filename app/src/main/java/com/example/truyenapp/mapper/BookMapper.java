@@ -1,5 +1,8 @@
 package com.example.truyenapp.mapper;
 
+import com.example.truyenapp.model.Comic;
+import com.example.truyenapp.response.BookResponse;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
