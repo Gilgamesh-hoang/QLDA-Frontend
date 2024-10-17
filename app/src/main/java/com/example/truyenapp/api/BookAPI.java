@@ -3,6 +3,7 @@ package com.example.truyenapp.api;
 import com.example.truyenapp.request.BookRequest;
 import com.example.truyenapp.response.APIResponse;
 import com.example.truyenapp.response.BookResponse;
+import com.example.truyenapp.response.ChapterResponse;
 
 import java.util.List;
 
@@ -36,8 +37,9 @@ public interface BookAPI {
     @GET("v1/books/description/{idBook}")
     Call<APIResponse<BookResponse>> getDescriptionBook(@Path("idBook") int idBook);
 
-    //    @GET("v1/chapters/book/{id}")
-//    Call<List<ChapterResponse>> getChaptersByBookId(@Path("id") int id);
+    @GET("v1/chapters/book/{id}")
+    Call<List<ChapterResponse>> getChaptersByBookId(@Path("id") int id);
+
     @GET("v1/books/{id}/comment")
     Call<APIResponse<Integer>> getAllComment(@Path("id") int id);
 }
