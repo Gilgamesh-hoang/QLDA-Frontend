@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-//import com.example.truyenapp.view.fragment.ChapterFragment;
+import com.example.truyenapp.view.fragment.ChapterFragment;
 import com.example.truyenapp.view.fragment.DetailFragment;
 
 public class FragmentAdapterDetail extends FragmentStateAdapter {
@@ -25,7 +25,7 @@ public class FragmentAdapterDetail extends FragmentStateAdapter {
         switch (position)
         {
             case 1:
-//                return new ChapterFragment(idComic);
+                return new ChapterFragment(idComic);
         }
         return new DetailFragment(idComic);
     }
