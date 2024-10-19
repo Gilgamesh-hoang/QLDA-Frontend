@@ -5,4 +5,15 @@
         android:enabled="true"
         android:icon="@drawable/ic_home"
         android:title="Trang chủ"/>
+    <item
+        android:id="@+id/bottom_item_noti"
+        android:enabled="true"
+        android:icon="@drawable/ic_noti"
+        android:title="Thông báo"/>
+
+    <item
+        android:id="@+id/bottom_item_account"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_account"
+        android:title="Tài khoản"/>
 </menu>

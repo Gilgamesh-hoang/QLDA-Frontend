@@ -32,30 +32,14 @@ import retrofit2.Response;
 
 public class HomeActivity extends AppCompatActivity {
 
-    String email;
-    int numberNotification;
     BottomNavigationView bottomNavigationView;
 
-
-//    private void initNavigateBottom() {
-//        bottomNavigationView = findViewById(R.id.bottom_nav);
-//        bottomNavigationView.show(1, true);
-//        bottomNavigationView.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home));
-//        bottomNavigationView.add(new MeowBottomNavigation.Model(2, R.drawable.ic_noti));
-//        bottomNavigationView.add(new MeowBottomNavigation.Model(4, R.drawable.ic_baseline_account));
-//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-//        initNavigateBottom();
-////        getNumberNotifications();
-//        if (numberNotification != 0) {
-//            bottomNavigationView.setCount(2, numberNotification + "");
-//        }
 
         handleEventNav();
     }
@@ -94,10 +78,6 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public void loadFragment(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).commit();
     }
 
     public AlertDialog.Builder showDialogLogin() {

@@ -89,7 +89,7 @@
                         android:textSize="12dp" />
 
                     <TextView
-                        android:id="@+id/tv_theloai"
+                        android:id="@+id/tv_category"
                         android:layout_width="85dp"
                         android:layout_height="75dp"
                         android:drawableTop="@drawable/ic_category"
