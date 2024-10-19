@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:menu="@menu/menu" />
+            app:menu="@menu/bottom_navigation_menu" />
         <!--        app:headerLayout="@layout/header"-->
 
         <ScrollView
@@ -89,7 +89,7 @@
                         android:textSize="12dp" />
 
                     <TextView
-                        android:id="@+id/tv_theloai"
+                        android:id="@+id/tv_category"
                         android:layout_width="85dp"
                         android:layout_height="75dp"
                         android:drawableTop="@drawable/ic_category"
