@@ -1,6 +1,7 @@
 package com.example.truyenapp.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.truyenapp.R;
+import com.example.truyenapp.constraints.BundleConstraint;
 import com.example.truyenapp.model.Comic;
+import com.example.truyenapp.view.activity.DetailComicActivity;
 
 import java.util.List;
 
@@ -55,10 +58,10 @@ public class ComicSliderAdapter extends RecyclerView.Adapter<ComicSliderAdapter.
         Glide.with(this.context).load(comic.getLinkImage()).into(holder.imgtruyen);
         holder.tv_tentruyen.setText(comic.getNameStory());
         holder.ll_rcv.setOnClickListener(view -> {
-//            Intent intent = new Intent(holder.itemView.getContext(), DetailComicActivity.class);
-//            intent.putExtra(BundleConstraint.ID_COMIC, comic.getId());
-//            intent.putExtra(BundleConstraint.LINK_IMG, comic.getLinkImage());
-//            holder.itemView.getContext().startActivity(intent);
+            Intent intent = new Intent(holder.itemView.getContext(), DetailComicActivity.class);
+            intent.putExtra(BundleConstraint.ID_COMIC, comic.getId());
+            intent.putExtra(BundleConstraint.LINK_IMG, comic.getLinkImage());
+            holder.itemView.getContext().startActivity(intent);
         });
     }
 
