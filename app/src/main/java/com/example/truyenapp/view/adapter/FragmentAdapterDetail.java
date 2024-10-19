@@ -6,7 +6,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-//import com.example.truyenapp.view.fragment.ChapterFragment;
 import com.example.truyenapp.view.fragment.ChapterFragment;
 import com.example.truyenapp.view.fragment.DetailFragment;
 
