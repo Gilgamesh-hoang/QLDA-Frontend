@@ -42,6 +42,7 @@ import com.example.truyenapp.utils.DialogHelper;
 import com.example.truyenapp.utils.SharedPreferencesHelper;
 import com.example.truyenapp.utils.SystemConstant;
 import com.example.truyenapp.view.activity.CategoryActivity;
+import com.example.truyenapp.view.activity.SearchActivity;
 import com.example.truyenapp.view.activity.SignInActivity;
 import com.example.truyenapp.view.adapter.ComicSliderAdapter;
 import com.google.android.material.navigation.NavigationView;
@@ -203,7 +204,7 @@ public class HomeFragment extends Fragment implements NavigationView.OnNavigatio
         rv2 = view.findViewById(R.id.rv2);
         rv3 = view.findViewById(R.id.rv3);
         menu = navigationView.getMenu();
-//        mn_it_chucnangquantri = menu.findItem(R.id.it_chucnangquantri);
+        mn_it_chucnangquantri = menu.findItem(R.id.it_chucnangquantri);
         tv_usernamehome = headerLayout.findViewById(R.id.tv_usernamehome);
 
         this.dialogHelper = new DialogHelper(this.getContext());
@@ -228,10 +229,10 @@ public class HomeFragment extends Fragment implements NavigationView.OnNavigatio
                 break;
             default:
                 break;
-//            case R.id.tv_TimKiemHome:
-//                Intent dialog_box1 = new Intent(getActivity(), SearchActivity.class);
-//                startActivity(dialog_box1);
-//                break;
+            case R.id.tv_TimKiemHome:
+                Intent dialog_box1 = new Intent(getActivity(), SearchActivity.class);
+                startActivity(dialog_box1);
+                break;
 
             case R.id.tv_category:
                 Intent dialog_box3 = new Intent(getActivity(), CategoryActivity.class);

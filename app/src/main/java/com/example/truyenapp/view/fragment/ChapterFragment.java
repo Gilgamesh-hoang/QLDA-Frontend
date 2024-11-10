@@ -81,6 +81,7 @@ public class ChapterFragment extends Fragment {
         viewChapter = view.findViewById(R.id.tv_luotxem);
         rcv = view.findViewById(R.id.rcv_chapter);
     }
+
     public void getViewEachChapter(int idChapter, ChapterResponse chapterResponse, Runnable callback) {
         chapterAPI.getTotalView(idChapter).enqueue(new Callback<APIResponse<Integer>>() {
             @Override
