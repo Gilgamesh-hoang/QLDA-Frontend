@@ -204,7 +204,7 @@ public class HomeFragment extends Fragment implements NavigationView.OnNavigatio
         rv2 = view.findViewById(R.id.rv2);
         rv3 = view.findViewById(R.id.rv3);
         menu = navigationView.getMenu();
-//        mn_it_chucnangquantri = menu.findItem(R.id.it_chucnangquantri);
+        mn_it_chucnangquantri = menu.findItem(R.id.it_chucnangquantri);
         tv_usernamehome = headerLayout.findViewById(R.id.tv_usernamehome);
 
         this.dialogHelper = new DialogHelper(this.getContext());

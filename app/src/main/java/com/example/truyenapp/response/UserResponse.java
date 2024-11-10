@@ -16,12 +16,7 @@ public class UserResponse {
     private String email;
     private String fullName;
     private String phone;
-    private Integer point;
     private String role;
     private String avatar;
-    private int rewardPoint;
-    private int totalAttendanceDates;
-    private int totalComments;
-    private int totalBookReads;
-    private int numberOfRatings;
+
 }
